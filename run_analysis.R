@@ -3,11 +3,9 @@ library(dplyr)
 ##
 ## This is the actual assignment
 ##
-run_analysis <- function(){
+Build1DF <- function(myn = -100){
   #ptm <- proc.time()
-  ## test Paramters
-  myn = -100
-  setwd("C:\\Kelly\\Coursera\\Course 3 - Getting and Cleaning Data\\Assignment\\GetCleanData")
+  setwd("C:\\Kelly\\Coursera\\Course 3 - Getting and Cleaning Data\\Assignment\\GetCleanData\\data")
   dir <- getwd()
   
     
@@ -120,19 +118,28 @@ run_analysis <- function(){
   ##
   
   
+  
+  ## Cleanup here remove the   
+  rm("ActivityName")
+  rm("indx")
+  rm("dir")
+  rm("myn")
+  #print(proc.time() - ptm)
+  return (means.std)
+}
+
+SummarizeThis <- function(mns) {
   ##  
   ##                                    Question 5  Second Dataset with Average of each variable for each Activity 
   ##
   ave.activity <- aggregate(means.std[,1:(length(means.std)-2)], list(means.std$ActivityName), mean)
   
-  
-  ## Cleanup here remove the   
-  rm("ActivityName")
-  #rm("means.std")
-  rm("indx")
-  #rm("labels")
-  rm("dir")
-  rm("myn")
-  #rm("valid_names")
-  #print(proc.time() - ptm)
 }
+
+run_analysis <- function(myn) {
+
+  means.std <- Build1DF(myn)
+  ave.activities <- SummarizeThis(means.std)
+  
+}
+
