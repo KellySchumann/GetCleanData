@@ -3,11 +3,11 @@ library(dplyr)
 ##
 ## This is the actual assignment
 ##
-run_analysis <- function(myn = -100){
+run_analysis <- function(){
   ptm <- proc.time()
   setwd("C:\\Kelly\\Coursera\\Course 3 - Getting and Cleaning Data\\Assignment\\GetCleanData\\data")
   dir <- getwd()
-  
+  myn = 10000 # for testing purposes only
     
   ## Goal here - to create the Single Complete Data Set
 
