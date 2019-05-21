@@ -14,28 +14,27 @@ The main routine run_analysis can be broken down into 2 sections described below
     2) Analysis the DataSet (SummarizeThis)
 
 
-<b>Build1DF</b>
+<b>Section 1 - Building a single Data Set</b>
  To create a single data set this are the steps that are taken...
 1) Make Columns Headers that are clean and understandable
 2) Create a single data set from the 4 files (2 test and 2 training files). <font color="red"><b>(Goals #1 and #4)</b></font>
 
-    A) Each group has 2 data files, the first contain all of the data points
-       The second file details the activity preformed creating the data points
+    A) Each group has 3 data files, 
+        i)  The first contain all of the data points
+        ii) The second file details the activity preformed creating the data points
+        iii)The subject doing the excerise
     B) Each Group 
-        Reading the data file and using rbind combine the Activity file - to complete the test 
-        results into a single file
+        Reading the data file and using rbind to combine the Activity file and Subject File 
+        to complete the test results into a single file
     C) The next step of this section joins the two group (data sets) together using cbind
-3) Clean unused interum variables to free memory
-4) Create a single Dataset - including variables containing Mean or Standard Dev. <font color="red"><b>(Goal #2)</b></font>
+3) Create a single Dataset - including variables containing Mean or Standard Dev. <font color="red"><b>(Goal #2)</b></font>
     A) Create a filter using grep
     B) Apply filter creating <b>"means.std"</b> data frame.
 5) Link the Activity file to the data sets so we have a more readable dataset not code but activity
     name <font color="red"><b>(Goal #3)</b></font>
 
-
-
-<b>SummarizeThis</b>
-  This function takes a parameter from Build1DF and will summarize it by activities for each of the 80 variables. <font color="red"><b>(Goal #5)</b></font>
+<b>Section 2 - Creating the Summarization</b>
+  Summarize it by activities for each of the 80 variables. <font color="red"><b>(Goal #5)</b></font>
     A) Using Aggreagate create the data frame named <b>"ave.activity"</b>
 
 
